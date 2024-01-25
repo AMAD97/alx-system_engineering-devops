@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory in a list format
+# Only the part of the name after the first dash is displayed
+
+# Get the list of files in the current directory
+list=$(ls)
+
+# Iterate over files in the list
+for file in $list
+do
+    # Check if the file is not hidden and has a dash in the name
+    if [[ ! "$file" == .* && "$file" == *-* ]]; then
+        # Extract the part of the name after the first dash
+        trimmed_name="${file#*-}"
+        echo "$trimmed_name"
+    fi
+done
