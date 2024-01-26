@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Infinite loop displaying "To infinity and beyond" with a 2-second delay.
+# Additionally, displays "I am invincible!!!" after each iteration.
+
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "I am invincible!!!"' SIGTERM 
+done
